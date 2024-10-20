@@ -9,7 +9,7 @@ import mocksRouter from "./routes/mocks.router.js";
 
 const app = express();
 const PORT = process.env.PORT||8080;
-const connection = mongoose.connect(`mongodb+srv://lijohernanpablo:1468gpasrl@cluster0.2ijqoo0.mongodb.net/AdoptMe`)
+const connection = mongoose.connect(`mongodb+srv://lijohernanpablo:Coder216600@cluster0.2ijqoo0.mongodb.net/AdoptMe`)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
