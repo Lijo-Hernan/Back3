@@ -20,11 +20,12 @@ class MockingService {
 
     static async generateMockingPets(num){
         const pets = []; 
+        const species = ['perro', 'gato', 'conejo','tortuga'];
 
         for (let i = 0; i < num; i++) {
             pets.push({
                 name: faker.animal.dog(),
-                specie: faker.animal.type(),
+                specie: faker.helpers.arrayElement(species),
                 adopted: false,
                 birthDate: faker.date.past(),
                 image: "../public/img/coderDog.jpg"

@@ -13,19 +13,20 @@ const getMockingUsers = async (req, res) => {
 
 const generateData = async (req, res) => {
     const { users, pets } = req.body; 
+
     try {
         const mockingUsers = await MockingService.generateMockingUsers(users);
 
         const mockingPets = await MockingService.generateMockingPets(pets);
-
+        
         await Promise.all(
             mockingUsers.map(user => usersService.create(user)),
-            mockingPets.map(pet => petsService.create(pet))
+            mockingPets.map(pet => petsService.create(pet)),
         );
-        
+
         res.send({
             status: "success",
-            message: "Servico generado"
+            message: "Base de datos actualizada"
         })
     } catch (error) {
         console.log(error);
